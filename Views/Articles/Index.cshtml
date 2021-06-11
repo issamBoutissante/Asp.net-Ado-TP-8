@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Asp.net_MVC_TP_8.Article>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Num_Art)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desig_Art)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PU_Art)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QttEnStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeuilMin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeuilMax)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Num_Art)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desig_Art)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PU_Art)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QttEnStock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeuilMin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeuilMax)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { numArt=item.Num_Art }) |
+            @Html.ActionLink("Details", "Details", new { numArt = item.Num_Art }) |
+            @Html.ActionLink("Delete", "Delete", new { numArt = item.Num_Art })
+        </td>
+    </tr>
+}
+
+</table>
